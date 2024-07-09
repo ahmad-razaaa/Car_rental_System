@@ -1,0 +1,361 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+class Cars
+{
+protected:
+    static const int max_cars = 20;
+    string car_name[20];
+    string car_model[20];
+    string car_color[20];
+    string car_make_year[20];
+    string car_fuel_type[20];
+    int car_mileage[20];
+    int car_seating_capacity[20];
+    int car_price[20];
+    static int car_total;
+
+public:
+    void initializeDefaultCars()
+    {
+        car_name[car_total] = "Alto";
+        car_model[car_total] = "VX";
+        car_color[car_total] = "White";
+        car_make_year[car_total] = "2021";
+        car_fuel_type[car_total] = "Petrol";
+        car_seating_capacity[car_total] = 5;
+        car_mileage[car_total] = 10000;
+        car_price[car_total] = 1000;
+        car_total++;
+
+        car_name[car_total] = "Cultus";
+        car_model[car_total] = "VXR";
+        car_color[car_total] = "Silver";
+        car_make_year[car_total] = "2022";
+        car_fuel_type[car_total] = "Petrol";
+        car_seating_capacity[car_total] = 5;
+        car_mileage[car_total] = 15000;
+        car_price[car_total] = 1500;
+        car_total++;
+
+        car_name[car_total] = "Mira";
+        car_model[car_total] = "X";
+        car_color[car_total] = "Blue";
+        car_make_year[car_total] = "2020";
+        car_fuel_type[car_total] = "Petrol";
+        car_seating_capacity[car_total] = 5;
+        car_mileage[car_total] = 17000;
+        car_price[car_total] = 1700;
+        car_total++;
+
+        car_name[car_total] = "Corolla";
+        car_model[car_total] = "Altis Grande";
+        car_color[car_total] = "White";
+        car_make_year[car_total] = "2021";
+        car_fuel_type[car_total] = "Petrol";
+        car_seating_capacity[car_total] = 5;
+        car_mileage[car_total] = 15000;
+        car_price[car_total] = 3000;
+        car_total++;
+
+        car_name[car_total] = "Civic";
+        car_model[car_total] = "RS Turbo";
+        car_color[car_total] = "Black";
+        car_make_year[car_total] = "2021";
+        car_fuel_type[car_total] = "Petrol";
+        car_seating_capacity[car_total] = 5;
+        car_mileage[car_total] = 20000;
+        car_price[car_total] = 3000;
+        car_total++;
+
+        car_name[car_total] = "City";
+        car_model[car_total] = "Aspire";
+        car_color[car_total] = "Silver";
+        car_make_year[car_total] = "2021";
+        car_fuel_type[car_total] = "Petrol";
+        car_seating_capacity[car_total] = 5;
+        car_mileage[car_total] = 18000;
+        car_price[car_total] = 2500;
+        car_total++;
+
+        car_name[car_total] = "Land Cruiser";
+        car_model[car_total] = "ZX";
+        car_color[car_total] = "Black";
+        car_make_year[car_total] = "2023";
+        car_fuel_type[car_total] = "Petrol";
+        car_seating_capacity[car_total] = 7;
+        car_mileage[car_total] = 8000;
+        car_price[car_total] = 5000;
+        car_total++;
+
+        car_name[car_total] = "Kia Sportage";
+        car_model[car_total] = "AWD";
+        car_color[car_total] = "White";
+        car_make_year[car_total] = "2022";
+        car_fuel_type[car_total] = "Petrol";
+        car_seating_capacity[car_total] = 5;
+        car_mileage[car_total] = 7000;
+        car_price[car_total] = 4000;
+        car_total++;
+
+        car_name[car_total] = "Haval H6";
+        car_model[car_total] = "2.0T";
+        car_color[car_total] = "White";
+        car_make_year[car_total] = "2022";
+        car_fuel_type[car_total] = "Petrol";
+        car_seating_capacity[car_total] = 7;
+        car_mileage[car_total] = 6000;
+        car_price[car_total] = 4500;
+        car_total++;
+    }
+   void save_Cars(const string &filename)
+{
+    ofstream car_file(filename);
+    if (!car_file)
+    {
+        cout << "Unable to open file." << endl;
+        return;
+    }
+    car_file << car_total << endl;
+    for (int i = 0; i < car_total; i++)
+    {
+        car_file << car_name[i] << endl;
+        car_file << car_model[i] << endl;
+        car_file << car_color[i] << endl;
+        car_file << car_make_year[i] << endl;
+        car_file << car_fuel_type[i] << endl;
+        car_file << car_mileage[i] << endl;
+        car_file << car_seating_capacity[i] << endl;
+        car_file << car_price[i] << endl;
+    }
+    car_file.close();
+}
+
+
+    void display_Cars(const string &filename)
+    {
+        ifstream car_file(filename);
+        if (!car_file)
+        {
+            cout << "Unable to open file." << endl;
+            return;
+        }
+        car_file >> car_total;
+        car_file.ignore();
+        for (int i = 0; i < car_total; i++)
+        {
+            getline(car_file, car_name[i]);
+            getline(car_file, car_model[i]);
+            getline(car_file, car_color[i]);
+            getline(car_file, car_make_year[i]);
+            getline(car_file, car_fuel_type[i]);
+            car_file >> car_mileage[i];
+            car_file >> car_seating_capacity[i];
+            car_file >> car_price[i];
+            car_file.ignore();
+        }
+        car_file.close();
+         system("cls");
+        for (int i = 0; i < car_total; i++)
+        {
+            cout << "Name: " << car_name[i] << endl;
+            cout << "Model: " << car_model[i] << endl;
+            cout << "Color: " << car_color[i] << endl;
+            cout << "Make year: " << car_make_year[i] << endl;
+            cout << "Fuel Type: " << car_fuel_type[i] << endl;
+            cout << "Mileage: " << car_mileage[i] << endl;
+            cout << "Seating Capacity: " << car_seating_capacity[i] << endl;
+            cout << "Price Per Hour: " << car_price[i] << endl;
+            cout << "------------------------------------------------------------------------------------------------------------------" << endl;
+        }
+    }
+    void search_car()
+    {
+        string n;
+        cout << "Enter name of the car to be searched..." << endl;
+        cin >> n;
+         system("cls");
+        for (int i = 0; i < car_total; i++)
+        {
+            if (n == car_name[i])
+            {
+                cout << "                     Car is Available" << endl;
+                cout << "------------------------------------------------------------------------------------------------------------------" << endl;
+                cout << "Name: " << car_name[i] << endl;
+                cout << "Model: " << car_model[i] << endl;
+                cout << "Color: " << car_color[i] << endl;
+                cout << "Make year: " << car_make_year[i] << endl;
+                cout << "Fuel Type: " << car_fuel_type[i] << endl;
+                cout << "Mileage: " << car_mileage[i] << endl;
+                cout << "Seating Capacity: " << car_seating_capacity[i] << endl;
+                cout << "Price Per Hour: " << car_price[i] << endl;
+                cout << "------------------------------------------------------------------------------------------------------------------" << endl;
+            }
+        }
+    }
+    void addCarToArray(const string &name, const string &model, const string &color, const string &make_year, const string &fuel_type, int mileage, int seating_capacity, int price)
+    {
+        if (car_total < max_cars)
+        {
+            car_name[car_total] = name;
+            car_model[car_total] = model;
+            car_color[car_total] = color;
+            car_make_year[car_total] = make_year;
+            car_fuel_type[car_total] = fuel_type;
+            car_mileage[car_total] = mileage;
+            car_seating_capacity[car_total] = seating_capacity;
+            car_price[car_total] = price;
+            car_total++;
+        }
+        else
+        {
+            cout << "Max cars limit reached." << endl;
+        }
+    }
+    int options()
+    {
+        int c;
+        cout << "Enter your choice: " << endl;
+        cout << "                  1.Login as Owner" << endl;
+        cout << "                  2.Login as Customer" << endl;
+        cout << "                  3.Exit" << endl;
+        cin >> c;
+        return c;
+    }
+};
+int Cars ::car_total = 0;
+
+class Car_Dealer
+{
+protected:
+    string name;
+    string password;
+
+public:
+    Car_Dealer() {}
+    Car_Dealer(string n, string p)
+    {
+        name = n;
+        password = p;
+    }
+    int login(string user, string passwor)
+    {
+        int y = 1, n = 2;
+
+        if (user == name && passwor == password)
+        {
+            return y;
+        }
+        else
+        {
+            return n;
+        }
+    }
+    int options2()
+    {
+        cout << "Choose action:" << endl;
+        cout << "              1. Add car" << endl;
+        cout << "              2. Remove car" << endl;
+        cout << "              3. Update car" << endl;
+        cout << "              4. Search car" << endl;
+        cout << "              5. Display all cars" << endl;
+        cout << "              6. Exit" << endl;
+    }
+    void add_car(Cars &c1)
+    {
+        c1.display_Cars("car.txt");  
+        system("cls");
+        string car_name, car_model, car_color, car_make_year, car_fuel_type;
+        int car_mileage, car_seating_capacity, car_price;
+
+        cout << "Enter car name: ";
+        cin >> car_name;
+        cout << "Enter car model: ";
+        cin >> car_model;
+        cout << "Enter car color: ";
+        cin >> car_color;
+        cout << "Enter car make year: ";
+        cin >> car_make_year;
+        cout << "Enter car fuel type: ";
+        cin >> car_fuel_type;
+        cout << "Enter car mileage: ";
+        cin >> car_mileage;
+        cout << "Enter car seating capacity: ";
+        cin >> car_seating_capacity;
+        cout << "Enter car price: ";
+        cin >> car_price;
+
+        c1.addCarToArray(car_name, car_model, car_color, car_make_year, car_fuel_type, car_mileage, car_seating_capacity, car_price);
+        c1.save_Cars("car.txt");
+
+        cout << "Car added successfully." << endl;
+    }
+};
+int main()
+{
+    Cars c1;
+    c1.initializeDefaultCars();
+    c1.save_Cars("car.txt");
+    if (c1.options() == 1)
+    {
+        int ok = 0;
+        do
+        {
+            Car_Dealer d1("Ali", "123");
+            string user_name;
+            string user_password;
+            cout << "Enter your name: ";
+            cin >> user_name;
+            cout << "Enter your password: ";
+            cin >> user_password;
+
+            int d = d1.login(user_name, user_password);
+
+            if (d == 1)
+            {
+                cout << "Login Successful!" << endl;
+                 int s;
+                do{
+                d1.options2();
+               
+                cin >> s;
+                switch (s)
+                {
+                case 1:
+                    d1.add_car(c1);
+                    break;
+                case 4:
+                    c1.search_car();
+                    break;
+                case 5:
+                    c1.display_Cars("car.txt");
+                    break;
+                }
+                }while(s!=0);
+            }
+            else
+            {
+                int t;
+                cout << "Login Failed!" << endl;
+                cout << "Try Again...?" << endl;
+                cout << "             1.Yes" << endl;
+                cout << "             2.No" << endl;
+                cin >> t;
+                if (t == 1)
+                {
+                    ok = 1;
+                }
+                else
+                {
+                    return 1;
+                }
+            }
+        } while (ok == 1);
+    }
+    else
+    {
+    }
+
+    return 0;
+}

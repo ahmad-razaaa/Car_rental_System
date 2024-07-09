@@ -1,0 +1,72 @@
+-----------------------------------------
+               RENTAL RECEIPT            
+-----------------------------------------
+User Pin: 
+Date & Time: Thu Jun 20 12:16:11 2024
+Car Rented: 
+Rental Duration: 0 hours
+Total Price: Rs.0
+-----------------------------------------
+         Thank you for renting with us!        
+For any queries, contact us at OurCar@gmail.com
+-----------------------------------------
+-----------------------------------------
+               RENTAL RECEIPT            
+-----------------------------------------
+User Pin: 000
+Date & Time: Thu Jun 20 13:15:32 2024
+Car Rented: Corolla
+Rental Duration: 6 hours
+Total Price: Rs.16200
+-----------------------------------------
+         Thank you for renting with us!        
+For any queries, contact us at OurCar@gmail.com
+-----------------------------------------
+-----------------------------------------
+               RENTAL RECEIPT            
+-----------------------------------------
+User Pin: 123
+Date & Time: Mon Jun 24 12:07:35 2024
+Car Rented: Alto
+Rental Duration: 2 hours
+Total Price: Rs.2000
+-----------------------------------------
+         Thank you for renting with us!        
+For any queries, contact us at OurCar@gmail.com
+-----------------------------------------
+-----------------------------------------
+               RENTAL RECEIPT            
+-----------------------------------------
+User Pin: 000
+Date & Time: Mon Jun 24 13:56:17 2024
+Car Rented: Civic
+Rental Duration: 3 hours
+Total Price: Rs.9000
+-----------------------------------------
+         Thank you for renting with us!        
+For any queries, contact us at OurCar@gmail.com
+-----------------------------------------
+-----------------------------------------
+               RENTAL RECEIPT            
+-----------------------------------------
+User Pin: 890
+Date & Time: Thu Jul 04 10:58:25 2024
+Car Rented: BMW
+Rental Duration: 7 hours
+Total Price: Rs.70000
+-----------------------------------------
+         Thank you for renting with us!        
+For any queries, contact us at OurCar@gmail.com
+-----------------------------------------
+-----------------------------------------
+               RENTAL RECEIPT            
+-----------------------------------------
+User Pin: 000
+Date & Time: Sat Jul 06 21:30:12 2024
+Car Rented: BMW
+Rental Duration: 3 hours
+Total Price: Rs.30000
+-----------------------------------------
+         Thank you for renting with us!        
+For any queries, contact us at OurCar@gmail.com
+-----------------------------------------
